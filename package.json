@@ -1,5 +1,5 @@
 {
-  "name": "allegro-task",
+  "name": "js-webpack-starter",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,7 @@
     "watch": "webpack --watch",
     "start": "webpack-dev-server --open"
   },
-  "author": "",
+  "author": "Krzysztof Bogusz",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.1.6",

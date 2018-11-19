@@ -1,30 +1,33 @@
+const webpack = require('webpack');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const webpack = require('webpack');
 
 module.exports = {
   mode: 'development',
-  entry: { app: path.resolve(__dirname, 'src/index.js') },
+  entry: {
+    app: path.resolve(__dirname, 'src/index.js')
+    // styles: path.resolve(__dirname, 'src/style.css')
+  },
 
   devServer: {
     contentBase: './dist',
     hot: true
   },
   devtool: 'inline-source-map',
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        styles: {
-          name: 'styles',
-          test: /\.css$/,
-          chunks: 'all',
-          enforce: true
-        }
-      }
-    }
-  },
+  // optimization: {
+  //   splitChunks: {
+  //     cacheGroups: {
+  //       styles: {
+  //         name: 'styles',
+  //         test: /\.css$/,
+  //         chunks: 'all',
+  //         enforce: true
+  //       }
+  //     }
+  //   }
+  // },
   module: {
     rules: [
       {
@@ -54,10 +57,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
-      filename: '[name].css',
-      chunkFilename: '[id].css'
+      filename: 'index.css'
     }),
     new HtmlWebpackPlugin({
       template: 'src/index.html'
