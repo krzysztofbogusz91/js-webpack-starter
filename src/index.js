@@ -1,8 +1,9 @@
 import './style.css';
 
-const xyz = 'string';
-
-const aaa = a => {
-  console.log('a called with', a);
+const initApp = () => {
+  let helloDiv = document.createElement('div');
+  helloDiv.innerText = 'Hello to webpack starter';
+  document.querySelector('.container').appendChild(helloDiv);
 };
-aaa('a');
+
+initApp();
